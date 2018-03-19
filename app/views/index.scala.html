@@ -1,0 +1,14 @@
+@(user: Form[users.UserInformation])(implicit  message: MessagesProvider, request : RequestHeader)
+@import helper._
+@main("Welcome to Play") {
+<h1>Welcome to Play! </h1>
+<form action="@routes.FormController.storeInDb()" method="POST">
+    @CSRF.formField
+    <input type="text" name="fname"/><br>
+    <input type="text" name="lname"/><br>
+    <input type="text" name="email"/><br>
+    <input type="submit" name="submit"/><br>
+
+</form>
+}
+

@@ -1,0 +1,8 @@
+@(user: User)(implicit flash: Flash, request: RequestHeader)
+@flash.get("Success").getOrElse("Welcome!")
+<h1>@request.session.get("email")</h1>
+@main("output"){
+<h1>@user.name</h1>
+<h1>@user.email</h1>
+
+}
